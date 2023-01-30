@@ -14,8 +14,18 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Hello {user.displayName}! </h1>
-      <p>Click the button below to logout!</p>
+      <div
+        className="text-center d-flex flex-column justify-content-center align-content-center"
+        style={{
+          height: '90vh',
+          padding: '30px',
+          maxWidth: '400px',
+          margin: '0 auto',
+          color: 'wheat',
+        }}
+      >
+        <h1>Welcome {user.displayName}, to The Dragon's Hoard </h1>
+      </div>
       <button className="btn btn-danger btn-lg copy-btn" type="button" onClick={signOut}>
         Sign Out
       </button>
