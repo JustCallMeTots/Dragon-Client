@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
@@ -9,7 +10,7 @@ export default function NavBar() {
       <div className="container-fluid">
         <Link passHref href="/">
           <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-            CHANGE ME
+            The Dragon's Hoard
           </a>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +26,17 @@ export default function NavBar() {
                 </a>
               </Link>
             </li>
-            <button type="button" className="btn btn-danger" onClick={signOut}>
+            <li className="nav-item">
+              <Link passHref href="/character">
+                <a className="nav-link" href="#">Characters</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link passHref href="/newCharacter">
+                <a className="nav-link" href="#">New Character</a>
+              </Link>
+            </li>
+            <button type="button" className="btn btn-dark" style={{ display: 'flex', alignItems: 'flex-end' }} onClick={signOut}>
               Sign Out
             </button>
           </ul>
