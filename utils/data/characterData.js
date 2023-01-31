@@ -28,7 +28,7 @@ const createCharacter = (character) => new Promise((resolve, reject) => {
 
 const updateCharacter = (character) => new Promise((resolve, reject) => {
   console.warn(character);
-  fetch(`${clientCredentials.databaseURL}/character/${character}`, {
+  fetch(`${clientCredentials.databaseURL}/character/${character.id}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',

@@ -50,10 +50,14 @@ function CharacterForm({ charObj }) {
       updateCharacter(formInput, user)
         .then(() => router.push('/character'));
     } else {
-      createCharacter(user.uid, formInput).then(() => {
+      const character = {
+        ...formInput, uid: 1,
+      };
+      createCharacter(character).then(() => {
         router.push('/character');
       });
     }
+    console.warn(formInput);
   };
 
   return (
@@ -87,9 +91,9 @@ function CharacterForm({ charObj }) {
           {
             races.map((Race) => (
               <option
-                key={Race.race_name}
-                value={Race.race_name}
-                selected={charObj.race_name === Race.race_name}
+                key={Race.id}
+                value={Race.id}
+                selected={formInput.raceId === Race.id}
               >
                 {Race.race_name}
               </option>
@@ -177,7 +181,12 @@ CharacterForm.propTypes = {
     level: PropTypes.string,
     ability: PropTypes.string,
     classes_name: PropTypes.string,
-    race_name: PropTypes.string,
+    raceId: PropTypes.number,
+    race: PropTypes.shape({
+      race_name: PropTypes.string,
+      race_description: PropTypes.string,
+      ability_increase: PropTypes.string,
+    }),
     descriptions: PropTypes.string,
     weapon_name: PropTypes.string,
     spells: PropTypes.string,

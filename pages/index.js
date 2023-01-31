@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
 

@@ -9,6 +9,7 @@ function Character() {
   //   const { user } = useAuth();
   useEffect(() => {
     getCharacters().then((data) => setCharacter(data));
+    // console.warn(character);
   }, []);
 
   return (
